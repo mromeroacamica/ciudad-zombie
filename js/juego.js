@@ -115,6 +115,9 @@ Juego.capturarMovimiento = function(tecla) {
   // El movimiento esta determinado por la velocidad del jugador
   if (tecla == 'izq') {
     movX = -velocidad;
+    // var posicionActualJugador=this.jugador.x;
+    // this.jugador.x=+posicionActualJugador;
+    // console.log(this.jugador);
   }
   if (tecla == 'arriba') {
     movY = -velocidad;
@@ -145,6 +148,8 @@ Juego.dibujar = function() {
   /* Aca hay que agregar la logica para poder dibujar al jugador principal
   utilizando al dibujante y los metodos que nos brinda.
   "Dibujante dibuja al jugador" */
+  Dibujante.dibujarEntidad(this.jugador);
+  // console.log(this);
 
   /* Completar */
 
