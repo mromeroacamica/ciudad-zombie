@@ -107,6 +107,8 @@ Juego.update = function() {
 }
 // Captura las teclas y si coincide con alguna de las flechas tiene que
 // hacer que el jugador principal se mueva
+// var movXTemp = 0;
+// var movYTemp = 0;
 Juego.capturarMovimiento = function(tecla) {
   var movX = 0;
   var movY = 0;
@@ -115,22 +117,29 @@ Juego.capturarMovimiento = function(tecla) {
   // El movimiento esta determinado por la velocidad del jugador
   if (tecla == 'izq') {
     movX = -velocidad;
-    // var posicionActualJugador=this.jugador.x;
-    // this.jugador.x=+posicionActualJugador;
+        // this.jugador.movimientos(tecla);
     // console.log(this.jugador);
+
   }
   if (tecla == 'arriba') {
     movY = -velocidad;
+    // this.jugador.movimientos(tecla);
   }
   if (tecla == 'der') {
     movX = velocidad;
+    // this.jugador.movimientos(tecla);
   }
   if (tecla == 'abajo') {
     movY = velocidad;
+    // this.jugador.movimientos(tecla);
   }
 
+// console.log(movX);
+// console.log(movY);
+// console.log(tecla);
   // Si se puede mover hacia esa posicion hay que hacer efectivo este movimiento
   if (this.chequearColisiones(movX + this.jugador.x, movY + this.jugador.y)) {
+    Jugador.movimientos(tecla, movX, movY);
     /* Aca tiene que estar la logica para mover al jugador invocando alguno
     de sus metodos  */
 
