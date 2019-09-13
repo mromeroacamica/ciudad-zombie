@@ -54,7 +54,8 @@ var Juego = {
   ],
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
-
+    new ZombieCaminante('imagenes/zombie1.png',240,390,15,15,10,100),
+    new ZombieCaminante('imagenes/zombie1.png',240,400,15,15,10,100)
   ]
 
 }
@@ -180,6 +181,7 @@ Juego.dibujar = function() {
   // Se recorren los enemigos pintandolos
   this.enemigos.forEach(function(enemigo) {
     /* Completar */
+    Dibujante.dibujarEntidad(enemigo);
   });
 
   // El dibujante dibuja las vidas del jugador
@@ -189,6 +191,22 @@ Juego.dibujar = function() {
     var x = tamanio * i
     Dibujante.dibujarRectangulo('red', x, 0, tamanio, 8);
   }
+
+  //Dibujar recta final en amarillo
+  Dibujante.dibujarRectangulo('yellow', 760, 500, 130, 20);
+  Dibujante.dibujarRectangulo('black', 760, 500, 10, 10);
+  Dibujante.dibujarRectangulo('black', 780, 500, 10, 10);
+  Dibujante.dibujarRectangulo('black', 800, 500, 10, 10);
+  Dibujante.dibujarRectangulo('black', 820, 500, 10, 10);
+  Dibujante.dibujarRectangulo('black', 840, 500, 10, 10);
+  Dibujante.dibujarRectangulo('black', 860, 500, 10, 10);
+  Dibujante.dibujarRectangulo('black', 880, 500, 10, 10);
+  Dibujante.dibujarRectangulo('black', 770, 510, 10, 10);
+  Dibujante.dibujarRectangulo('black', 790, 510, 10, 10);
+  Dibujante.dibujarRectangulo('black', 810, 510, 10, 10);
+  Dibujante.dibujarRectangulo('black', 830, 510, 10, 10);
+  Dibujante.dibujarRectangulo('black', 850, 510, 10, 10);
+  Dibujante.dibujarRectangulo('black', 870, 510, 10, 10);
 };
 
 
