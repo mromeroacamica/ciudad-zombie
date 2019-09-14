@@ -17,7 +17,7 @@ ZombieConductor.prototype = Object.create(Enemigo.prototype);
 ZombieConductor.prototype.constructor = ZombieConductor;
 
 ZombieConductor.prototype.atacar = function (jugador) {
-  jugador.perderVidas(5);
+  jugador.perderVidas(2);
 }
 
 ZombieConductor.prototype.mover=function(){
