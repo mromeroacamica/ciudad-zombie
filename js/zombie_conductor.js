@@ -16,10 +16,14 @@ var ZombieConductor = function(sprite, x, y, ancho, alto, velocidad, rangoMov, d
 ZombieConductor.prototype = Object.create(Enemigo.prototype);
 ZombieConductor.prototype.constructor = ZombieConductor;
 
+ZombieConductor.prototype.atacar = function (jugador) {
+  jugador.perderVidas(2);
+}
+
 ZombieConductor.prototype.mover=function(){
   if(this.direccion==='h'){
   this.x -= this.velocidad;
-}else{
+}else if(this.direccion==='v'){
   this.y -= this.velocidad;
 }
 
@@ -29,6 +33,11 @@ ZombieConductor.prototype.mover=function(){
   if ((this.x < this.rangoMov.desdeX) || (this.x > this.rangoMov.hastaX)){
     this.velocidad *= -1;
   }
+  //En esta parte vamos a invertir el sentido vertical de los enemigos
+  // if ((this.y < this.rangoMov.desdeY) || (this.y > this.rangoMov.hastaY)){
+  //   this.velocidad *= -1;
+  // }
+
   // Si sobrepasa el rangoY, lo manda al centro entre ambos rangos
   if ((this.y < this.rangoMov.desdeY) || (this.y > this.rangoMov.hastaY)) {
     this.y = this.rangoMov.desdeY + (this.rangoMov.hastaY - this.rangoMov.desdeY)/2;

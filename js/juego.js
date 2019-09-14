@@ -54,11 +54,13 @@ var Juego = {
   ],
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
-    new ZombieCaminante('imagenes/zombie1.png',240,390,15,15,10, {desdeX:240, hastaX: 350, desdeY:390, hastaY:400 }),
-    new ZombieCaminante('imagenes/zombie1.png',240,400,15,15,10,100),
-    new ZombieConductor('imagenes/tren_horizontal.png', 30, 325, 220, 30, 10, {desdeX:240, hastaX: 350, desdeY:390, hastaY:400 }, 'h'),
-    new ZombieConductor('imagenes/tren_vertical.png', 675, 110, 30, 220, 10, {desdeX:240, hastaX: 350, desdeY:390, hastaY:400 }, 'v'),
-    new ZombieConductor('imagenes/tren_vertical.png', 645, 130, 30, 220, 10, {desdeX:240, hastaX: 350, desdeY:390, hastaY:400 }, 'v')
+    new ZombieCaminante('imagenes/zombie1.png',240,390,15,15,1, {desdeX:80, hastaX: 550, desdeY:390, hastaY:400 }),
+    new ZombieCaminante('imagenes/zombie2.png',240,600,15,15,2,{desdeX:80, hastaX: 550, desdeY:390, hastaY:500 }),
+    new ZombieCaminante('imagenes/zombie3.png',390,90,15,15,1,{desdeX:390, hastaX: 850, desdeY:90, hastaY:100 }),
+    new ZombieCaminante('imagenes/zombie4.png',640,400,15,15,2,{desdeX:340, hastaX: 850, desdeY:400, hastaY:450 }),
+    new ZombieConductor('imagenes/tren_horizontal.png', 30, 325, 220, 30, 10, {desdeX:0, hastaX: 850, desdeY:325, hastaY:325 }, 'h'),
+    new ZombieConductor('imagenes/tren_vertical.png', 675, 10, 30, 120, 1, {desdeX:675, hastaX: 675, desdeY:10, hastaY:850 }, 'v'),
+    new ZombieConductor('imagenes/tren_vertical.png', 645, 10, 30, 120, 3, {desdeX:645, hastaX: 645, desdeY:10, hastaY:850 }, 'v')
   ]
 
 }
@@ -222,16 +224,8 @@ una funcionalidad similar pero para que se muevan.*/
 Juego.moverEnemigos = function() {
   /* COMPLETAR */
   this.enemigos.forEach(function(enemigo){
-    // console.log(enemigo);
-    // if(enemigo.prototype == ZombieCaminante.prototype){
-    //   ZombieCaminante.mover();
-    // 
-    // enemigo.mover();
-  
-  // this.enemigos.forEach(function(enemigo) {
-  //   /* Completar */
-  //   // console.log(this.enemigo)
-  //   Dibujante.dibujarEntidad(enemigo);
+  enemigo.mover();
+  //   /* Completar */  
   });
 
 };
@@ -245,9 +239,12 @@ Juego.calcularAtaques = function() {
     if (this.intersecan(enemigo, this.jugador, this.jugador.x, this.jugador.y)) {
       /* Si el enemigo colisiona debe empezar su ataque
       COMPLETAR */
+      enemigo.comenzarAtaque(this.jugador);
+
     } else {
       /* Sino, debe dejar de atacar
       COMPLETAR */
+      enemigo.dejarDeAtacar(this.jugador);
     }
   }, this);
 };
