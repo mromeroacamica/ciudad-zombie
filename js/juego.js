@@ -21,11 +21,11 @@ var Juego = {
     /*Aca se van a agregar los obstaculos visibles. Tenemos una valla horizontal
     de ejemplo, pero podras agregar muchos mas. */
     new Obstaculo('imagenes/valla_horizontal.png', 70, 430, 30, 30, 1),
-    new Obstaculo('imagenes/valla_horizontal.png', 100, 430, 30, 30, 1),
+    // new Obstaculo('imagenes/valla_horizontal.png', 100, 430, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 550, 400, 30, 30, 1),
-    new Obstaculo('imagenes/valla_horizontal.png', 500, 420, 30, 30, 1),
+    // new Obstaculo('imagenes/valla_horizontal.png', 500, 420, 30, 30, 1),
     new Obstaculo('imagenes/valla_horizontal.png', 470, 290, 30, 30, 1),
-    new Obstaculo('imagenes/valla_horizontal.png', 500, 290, 30, 30, 1),
+    // new Obstaculo('imagenes/valla_horizontal.png', 500, 290, 30, 30, 1),
     new Obstaculo('imagenes/valla_vertical.png', 280, 400, 30, 30, 1),
     new Obstaculo('imagenes/valla_vertical.png', 280, 430, 30, 30, 1),
     new Obstaculo('imagenes/valla_vertical.png', 350, 200, 30, 20, 1),
@@ -260,7 +260,7 @@ Juego.chequearColisiones = function(x, y) {
 
       /*COMPLETAR, obstaculo debe chocar al jugador*/
       obstaculo.chocar(this.jugador);
-      console.log(obstaculo)
+      console.log(obstaculo);
 
       puedeMoverse = false
     }
