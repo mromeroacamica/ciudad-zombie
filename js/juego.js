@@ -54,8 +54,11 @@ var Juego = {
   ],
   // Los enemigos se agregaran en este arreglo.
   enemigos: [
-    new ZombieCaminante('imagenes/zombie1.png',240,390,15,15,10,100),
-    new ZombieCaminante('imagenes/zombie1.png',240,400,15,15,10,100)
+    new ZombieCaminante('imagenes/zombie1.png',240,390,15,15,10, {desdeX:240, hastaX: 350, desdeY:390, hastaY:400 }),
+    new ZombieCaminante('imagenes/zombie1.png',240,400,15,15,10,100),
+    new ZombieConductor('imagenes/tren_horizontal.png', 30, 325, 220, 30, 10, {desdeX:240, hastaX: 350, desdeY:390, hastaY:400 }, 'h'),
+    new ZombieConductor('imagenes/tren_vertical.png', 675, 110, 30, 220, 10, {desdeX:240, hastaX: 350, desdeY:390, hastaY:400 }, 'v'),
+    new ZombieConductor('imagenes/tren_vertical.png', 645, 130, 30, 220, 10, {desdeX:240, hastaX: 350, desdeY:390, hastaY:400 }, 'v')
   ]
 
 }
@@ -176,11 +179,13 @@ Juego.dibujar = function() {
   // Se recorren los obstaculos de la carretera pintandolos
   this.obstaculosCarretera.forEach(function(obstaculo) {
     Dibujante.dibujarEntidad(obstaculo);
+    // console.log(obstaculo)
   });
 
   // Se recorren los enemigos pintandolos
   this.enemigos.forEach(function(enemigo) {
     /* Completar */
+    // console.log(this.enemigo)
     Dibujante.dibujarEntidad(enemigo);
   });
 
@@ -216,6 +221,19 @@ un recorrido por los enemigos para dibujarlos en pantalla ahora habra que hacer
 una funcionalidad similar pero para que se muevan.*/
 Juego.moverEnemigos = function() {
   /* COMPLETAR */
+  this.enemigos.forEach(function(enemigo){
+    // console.log(enemigo);
+    // if(enemigo.prototype == ZombieCaminante.prototype){
+    //   ZombieCaminante.mover();
+    // 
+    // enemigo.mover();
+  
+  // this.enemigos.forEach(function(enemigo) {
+  //   /* Completar */
+  //   // console.log(this.enemigo)
+  //   Dibujante.dibujarEntidad(enemigo);
+  });
+
 };
 
 /* Recorre los enemigos para ver cual esta colisionando con el jugador
